@@ -3,13 +3,14 @@ version: '3.8'
 services:
   api:
     build: .
-    environment:
-      - MYSQL_ROOT_PASSWORD: "root"
     ports:
       - 8000:8000
     volumes:
       - .:/user/app
     depends_on:
       - db
+    command: npx nodemon -L index.js
   db:
     image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example

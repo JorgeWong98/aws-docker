@@ -8,4 +8,6 @@ RUN npm install
 
 COPY [".", "/user/app/"]
 
-CMD ["npx", "nodemon", "index.js"]
+EXPOSE 8000
+
+CMD ["npx", "nodemon", "-L", "index.js"]
