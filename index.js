@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { createConnection } from "mysql2/promise";
+import morgan from "morgan";
 
 //import library to make post requests
 
@@ -8,6 +9,7 @@ import { createConnection } from "mysql2/promise";
 
 const app = express();
 app.use(bodyParser.json());
+app.use(morgan("combined"));
 // const connection = await createConnection({
 // 	host: "db",
 // 	user: "root",
@@ -25,6 +27,7 @@ app.get("/", async (req, res) => {
 
 app.post("/get-data", async (req, res) => {
 	const { body } = req;
+	console.log("Hello world from here")
 	return res.send({ body });
 });
 
