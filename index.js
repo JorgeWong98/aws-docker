@@ -27,7 +27,8 @@ app.get("/", async (req, res) => {
 
 app.post("/get-data", async (req, res) => {
 	const { body } = req;
-	console.log("Hello world from here")
+	// console.log("Hello world from here")
+	console.log(body);
 	return res.send({ body });
 });
 
